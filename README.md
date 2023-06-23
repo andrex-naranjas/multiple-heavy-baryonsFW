@@ -7,7 +7,7 @@ Code to compute double charm and bottom baryon spectra and decay widths. A fit i
 To install the framework you need anaconda and git on a linux machine. In a terminal type:
 1. Clone the repository:
   ```
-  git clone git@github.com:andrex-naranjas/bottom-baryonsFW.git
+  git clone git@github.com:andrex-naranjas/double-heavy-baryonsFW.git
   ```
 2. Access the code:
   ```
@@ -16,7 +16,7 @@ To install the framework you need anaconda and git on a linux machine. In a term
 3. Install the conda enviroment:
   ```
   conda env create -f config.yml
-  conda activate bottom
+  conda activate double-heavy
   conda develop .
   ```
 3.1 Update the conda enviroment:

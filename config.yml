@@ -1,4 +1,4 @@
-name: bottom
+name: double-heavy
 channels:
   - conda-forge
   - defaults
