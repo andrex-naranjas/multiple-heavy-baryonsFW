@@ -1,4 +1,4 @@
-# Double and triple heavy baryons decay widths and mass spectra
+# Double and triple charm and bottom baryons decay widths and mass spectra
 
 Code to compute double charm and bottom baryon spectra and decay widths. A fit is performed to obtain the model parameters. Errors are propagated via bootstrap Monte Carlo Gaussian sampling.
 
