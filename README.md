@@ -11,7 +11,7 @@ To install the framework you need anaconda and git on a linux machine. In a term
   ```
 2. Access the code:
   ```
-  cd bottom-baryonsFW
+  cd multiple-heavy-baryonsFW
   ```
 3. Install the conda enviroment:
   ```
