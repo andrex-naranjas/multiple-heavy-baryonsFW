@@ -17,14 +17,14 @@ class FlavorAmplitudes():
     """
     Class to get electromagnetic flavor amplitudes
     """        
-    def __init__(self, baryons, m_q=299, m_s=465, m_b=4928):
+    def __init__(self, baryons, m_q=299, m_s=465, m_c=1606):
         # baryons available: omegas, sigmas, lambdas, cascades_prime, cascades
         self.m_baryons = baryons 
         # Values of the magnetic moments of each quark according to Dothan 1982
         self.mu_u = (2/3) * 1/(2 * m_q)
         self.mu_d = (-1/3) * 1/(2 * m_q)
         self.mu_s = (-1/3) * 1/(2 * m_s)
-        self.mu_b = (-1/3) * 1/(2 * m_b)
+        self.mu_c = (2/3) * 1/(2 * m_c)
         # up quark state
         self.u = Matrix([[1],[0],[0],[0]]) 
         # down quark state
@@ -32,14 +32,14 @@ class FlavorAmplitudes():
         # strange quark state
         self.s = Matrix([[0],[0],[1],[0]]) 
         # bottom quark state
-        self.b = Matrix([[0],[0],[0],[1]]) 
+        self.c = Matrix([[0],[0],[0],[1]]) 
               
     def magnetic_operators(self, index): 
         """
         Method to calculate the Magnetic Operators (mu(i))
         index == operator index (1,2,3)
         """
-        return Matrix([[self.mu_u, 0, 0, 0], [0, self.mu_d, 0, 0], [0, 0, self.mu_s, 0], [0, 0, 0, self.mu_b]])
+        return Matrix([[self.mu_u, 0, 0, 0], [0, self.mu_d, 0, 0], [0, 0, self.mu_s, 0], [0, 0, 0, self.mu_c]])
 
     def identity_matrix(self, dim):
         """
@@ -72,14 +72,8 @@ class FlavorAmplitudes():
         """
         return TensorProduct(TensorProduct(state_a ,state_b), state_c)
     
-    #Flavor States of the anti-triplet
-    def Lambda_b_0(self):
-        """
-        Method to define the Lambda_b_0 flavor state
-        """
-        return (self.flavor_state(self.u, self.d, self.b) - self.flavor_state(self.d, self.u, self.b)) / sqrt(2)
-
-    def Xi_b_0(self):
+    #Flavor States of the triplet
+    def Xi_bb_0(self):
         """
         Method to define the Xi_b_0 flavor state
         """
