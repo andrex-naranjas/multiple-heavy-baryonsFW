@@ -496,21 +496,21 @@ double EMDecayWidths::SPINFLIP_U2_1l_m1m_GS(double k_value, double alpha_lam, do
 
 double EMDecayWidths::SPINFLIP_U3_1l_m1_GS(double k_value, double alpha_lam, double alpha_rho,  double mbottom, double mlight, double phik, double thetak){
   double value1 = p_imag * phik;
-  double value2 = (-3.0) * std::pow(mlight, 2) * std::pow(k_value, 2) / 2 * (std::pow(alpha_lam * (2. * mbottom + mlight), 2));
-  double value = (-1.0) * std::sqrt(6.) * p_imag * mlight * k_value * std::exp(value1 + value2) * std::sin(thetak)/ (2 * alpha_lam  * (2. * mbottom + mlight) );
+  double value2 = (-3.0) * std::pow(mbottom, 2) * std::pow(k_value, 2) / 2 * (std::pow(alpha_lam * (2. * mbottom + mlight), 2));
+  double value = (-1.0) * std::sqrt(6.) * p_imag * mbottom * k_value * std::exp(value1 + value2) * std::sin(thetak)/ (2 * alpha_lam  * (2. * mbottom + mlight) );
   return value;
 }
 
 double EMDecayWidths::SPINFLIP_U3_1l_m0_GS(double k_value, double alpha_lam, double alpha_rho,  double mbottom, double mlight, double phik, double thetak){
-  double value1 = (-3.0) * std::pow(mlight, 2) * std::pow(k_value, 2) / (2 * (std::pow(alpha_lam * (2. * mbottom + mlight), 2)));
-  double value = std::sqrt(3) * p_imag * mlight * k_value * std::exp(value1) * std::cos(thetak)/ (alpha_lam  * (2. * mbottom + mlight) );
+  double value1 = (-3.0) * std::pow(mbottom, 2) * std::pow(k_value, 2) / (2 * (std::pow(alpha_lam * (2. * mbottom + mlight), 2)));
+  double value = std::sqrt(3) * p_imag * mbottom * k_value * std::exp(value1) * std::cos(thetak)/ (alpha_lam  * (2. * mbottom + mlight) );
   return value;
 }
 
 double EMDecayWidths::SPINFLIP_U3_1l_m1m_GS(double k_value, double alpha_lam, double alpha_rho,  double mbottom, double mlight, double phik, double thetak){
   double value1 = (-1.0) * p_imag * phik;
-  double value2 = (-3.0) * std::pow(mlight, 2) * std::pow(k_value, 2) / 2 * (std::pow(alpha_lam * (2. * mbottom + mlight), 2));
-  double value = std::sqrt(6) * p_imag * mlight * k_value * std::exp(value1 + value2) * std::sin(thetak)/ (2 * alpha_lam  * (2. * mbottom + mlight) );
+  double value2 = (-3.0) * std::pow(mbottom, 2) * std::pow(k_value, 2) / 2 * (std::pow(alpha_lam * (2. * mbottom + mlight), 2));
+  double value = std::sqrt(6) * p_imag * mbottom * k_value * std::exp(value1 + value2) * std::sin(thetak)/ (2 * alpha_lam  * (2. * mbottom + mlight) );
   return value;
 }
 
