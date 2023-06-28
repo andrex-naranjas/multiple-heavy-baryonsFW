@@ -15,7 +15,7 @@ import numpy as np
 
 class FlavorAmplitudes():
     """
-    Class to get electromagnetic flavor amplitudes
+    Class to get electromagnetic flavor amplitudes for charm flavor
     """        
     def __init__(self, baryons, m_q=299, m_s=465, m_c=1606):
         # baryons available: omegas, sigmas, lambdas, cascades_prime, cascades
