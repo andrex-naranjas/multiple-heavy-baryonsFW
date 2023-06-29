@@ -724,24 +724,24 @@ double EMDecayWidths::ORBITALSPLIT_U2_1l_m1m_1l_m1m(double k_value, double alpha
 //U3 1lam->1lam;
 double EMDecayWidths::ORBITALSPLIT_U3_1l_m1_1l_m1(double k_value, double alpha_lam, double mbottom, double mlight, double thetak){
 
-  double value1 = (-3.) * std::pow(k_value,2) * std::pow(mlight,2) + 2 * std::pow(alpha_lam,2) * std::pow(mbottom + 2 * mlight,2)
-    + 3 * std::pow(k_value,2) * std::pow(mlight,2) * std::pow(std::cos(thetak),2);
-  double value2 =  (2.) * std::pow(alpha_lam,2) * std::exp((3 * std::pow(k_value,2) * std::pow(mlight,2))/(2. * std::pow(alpha_lam,2) * std::pow(mbottom + 2 * mlight,2))) * std::pow(mbottom + 2 * mlight,2);
+  double value1 = (-3.) * std::pow(k_value,2) * std::pow(mbottom,2) + 2 * std::pow(alpha_lam,2) * std::pow(2. * mbottom + mlight,2)
+    + 3 * std::pow(k_value,2) * std::pow(mbottom,2) * std::pow(std::cos(thetak),2);
+  double value2 =  (2.) * std::pow(alpha_lam,2) * std::exp((3 * std::pow(k_value,2) * std::pow(mbottom,2))/(2. * std::pow(alpha_lam,2) * std::pow(2. * mbottom + mlight,2))) * std::pow(2. * mbottom + mlight,2);
   double value = value1/value2;
   return value;
 }
 
 double EMDecayWidths::ORBITALSPLIT_U3_1l_m0_1l_m0(double k_value, double alpha_lam, double mbottom, double mlight, double thetak){
-  double value1 = std::pow(alpha_lam,2) * std::pow(mbottom + 2 * mlight,2) - 3 * std::pow(k_value,2) * std::pow(mlight,2) * std::pow(std::cos(thetak),2);
-  double value2 = std::pow(alpha_lam,2) * std::exp((3 * std::pow(k_value,2) * std::pow(mlight,2)) / (2. * std::pow(alpha_lam,2) * std::pow(mbottom + 2 * mlight,2))) * std::pow(mbottom + 2 * mlight,2);
+  double value1 = std::pow(alpha_lam,2) * std::pow(2. * mbottom + mlight,2) - 3 * std::pow(k_value,2) * std::pow(mbottom,2) * std::pow(std::cos(thetak),2);
+  double value2 = std::pow(alpha_lam,2) * std::exp((3 * std::pow(k_value,2) * std::pow(mbottom,2)) / (2. * std::pow(alpha_lam,2) * std::pow(2. * mbottom + mlight,2))) * std::pow(2. * mbottom + mlight,2);
   double value = value1/value2;
   return value;
 }
 
 double EMDecayWidths::ORBITALSPLIT_U3_1l_m1m_1l_m1m(double k_value, double alpha_lam, double mbottom, double mlight, double thetak){
 
-  double value1 = -3 * std::pow(k_value,2) * std::pow(mlight,2) + 2 * std::pow(alpha_lam,2) * std::pow(mbottom + 2 * mlight,2) + 3 * std::pow(k_value,2) * std::pow(mlight,2) * std::pow(std::cos(thetak),2);
-  double value2 = 2. * std::pow(alpha_lam,2) * std::exp((3 * std::pow(k_value,2) * std::pow(mlight,2))/(2. * std::pow(alpha_lam,2) * std::pow(mbottom + 2 * mlight,2))) * std::pow(mbottom + 2 * mlight,2);
+  double value1 = -3 * std::pow(k_value,2) * std::pow(mlight,2) + 2 * std::pow(alpha_lam,2) * std::pow(2. * mbottom + mlight,2) + 3 * std::pow(k_value,2) * std::pow(mlight,2) * std::pow(std::cos(thetak),2);
+  double value2 = 2. * std::pow(alpha_lam,2) * std::exp((3 * std::pow(k_value,2) * std::pow(mlight,2))/(2. * std::pow(alpha_lam,2) * std::pow(2. * mbottom + mlight,2))) * std::pow(2. * mbottom + mlight,2);
   double value = value1/value2;
   return value;
 }
@@ -749,7 +749,7 @@ double EMDecayWidths::ORBITALSPLIT_U3_1l_m1m_1l_m1m(double k_value, double alpha
 //U1 1lam->1rho
 double EMDecayWidths::ORBITALSPLIT_U1_1l_m0_1r_m0(double k_value, double alpha_rho, double alpha_lam, double mbottom, double mlight, double thetak){
   double value1 = std::pow(k_value,2) * mbottom * std::pow(std::cos(thetak),2);
-  double value2 = std::exp((std::pow(k_value,2) * (std::pow(alpha_rho,-2) + (3 * std::pow(mbottom,2))/(std::pow(alpha_lam,2) * std::pow(mbottom + 2 * mlight,2))))/8.);
+  double value2 = std::exp((std::pow(k_value,2) * (std::pow(alpha_rho,-2) + (3 * std::pow(mbottom,2))/(std::pow(alpha_lam,2) * std::pow(2. * mbottom + mlight,2))))/8.);
   double value2p = (4 * alpha_lam * alpha_rho * mbottom + 8 * alpha_lam * alpha_rho * mlight);
   value2 = value2 * value2p;
   double value = value1/value2;
@@ -759,7 +759,7 @@ double EMDecayWidths::ORBITALSPLIT_U1_1l_m0_1r_m0(double k_value, double alpha_r
 //U2 1lam->1rho
 double EMDecayWidths::ORBITALSPLIT_U2_1l_m0_1r_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak){
   double value1 = std::pow(k_value,2) * mbottom * std::pow(std::cos(thetak),2);
-  double value2 = std::exp((std::pow(k_value,2) * (std::pow(alpha_rho,-2) + (3 * std::pow(mbottom,2))/(std::pow(alpha_lam,2) * std::pow(mbottom + 2 * mlight,2))))/8.);
+  double value2 = std::exp((std::pow(k_value,2) * (std::pow(alpha_rho,-2) + (3 * std::pow(mbottom,2))/(std::pow(alpha_lam,2) * std::pow(2. * mbottom + mlight,2))))/8.);
   double value2p = 4 * alpha_lam * alpha_rho * mbottom + 8 * alpha_lam * alpha_rho * mlight;
   value2 = value2 * value2p;
   double value = value1/value2;
@@ -771,7 +771,7 @@ double EMDecayWidths::ORBITALSPLIT_U2_1l_m0_1r_m0(double k_value, double alpha_l
 double EMDecayWidths::ORBITALSPLIT_U1_1r_m1_1r_m1(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak){
   double value1 = 8 * std::pow(alpha_rho,2) - std::pow(k_value,2) + std::pow(k_value,2) * std::pow(std::cos(thetak),2);
   double value2 = 8. * std::pow(alpha_rho,2);
-  double value2p = std::exp((std::pow(k_value,2) * (std::pow(alpha_rho,-2) + (3 * std::pow(mbottom,2))/(std::pow(alpha_lam,2) * std::pow(mbottom + 2 * mlight,2))))/8.);
+  double value2p = std::exp((std::pow(k_value,2) * (std::pow(alpha_rho,-2) + (3 * std::pow(mbottom,2))/(std::pow(alpha_lam,2) * std::pow(2. * mbottom + mlight,2))))/8.);
   value2 = value2 * value2p;
   double value = value1/value2;
   return value;
@@ -780,7 +780,7 @@ double EMDecayWidths::ORBITALSPLIT_U1_1r_m1_1r_m1(double k_value, double alpha_l
 double EMDecayWidths::ORBITALSPLIT_U1_1r_m0_1r_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak){
   double value1 = 4 * std::pow(alpha_rho,2) - std::pow(k_value,2) * std::pow(std::cos(thetak),2);
   double value2 = 4. * std::pow(alpha_rho,2);
-  double value2p = std::exp((std::pow(k_value,2) * (std::pow(alpha_rho,-2) + (3 * std::pow(mbottom,2))/(std::pow(alpha_lam,2) * std::pow(mbottom + 2 * mlight,2))))/8.);
+  double value2p = std::exp((std::pow(k_value,2) * (std::pow(alpha_rho,-2) + (3 * std::pow(mbottom,2))/(std::pow(alpha_lam,2) * std::pow(2. * mbottom + mlight,2))))/8.);
   value2 = value2 * value2p;
   double value = value1/value2;
   return value;
@@ -789,7 +789,7 @@ double EMDecayWidths::ORBITALSPLIT_U1_1r_m0_1r_m0(double k_value, double alpha_l
 double EMDecayWidths::ORBITALSPLIT_U1_1r_m1m_1r_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak){
   double value1 = 8 * std::pow(alpha_rho,2) - std::pow(k_value,2) + std::pow(k_value,2) * std::pow(std::cos(thetak),2);
   double value2 = 8. * std::pow(alpha_rho,2);
-  double value2p = std::exp((std::pow(k_value,2) * (std::pow(alpha_rho,-2) + (3 * std::pow(mbottom,2))/(std::pow(alpha_lam,2) * std::pow(mbottom + 2 * mlight,2))))/8.);
+  double value2p = std::exp((std::pow(k_value,2) * (std::pow(alpha_rho,-2) + (3 * std::pow(mbottom,2))/(std::pow(alpha_lam,2) * std::pow(2. * mbottom + mlight,2))))/8.);
   value2 = value2 * value2p;
   double value = value1/value2;
   return value;
@@ -799,7 +799,7 @@ double EMDecayWidths::ORBITALSPLIT_U1_1r_m1m_1r_m1m(double k_value, double alpha
 double EMDecayWidths::ORBITALSPLIT_U2_1r_m1_1r_m1(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak){
   double value1 =(8 * std::pow(alpha_rho,2) - std::pow(k_value,2) + std::pow(k_value,2) * std::pow(std::cos(thetak),2));
   double value2 = 8. * std::pow(alpha_rho,2);
-  double value2p = std::exp((std::pow(k_value,2) * (std::pow(alpha_rho,-2) + (3 * std::pow(mbottom,2))/(std::pow(alpha_lam,2) * std::pow(mbottom + 2 * mlight,2))))/8.);
+  double value2p = std::exp((std::pow(k_value,2) * (std::pow(alpha_rho,-2) + (3 * std::pow(mbottom,2))/(std::pow(alpha_lam,2) * std::pow(2. * mbottom + mlight,2))))/8.);
   value2 = value2 * value2p;
   double value = value1/value2;
   return value;
@@ -808,7 +808,7 @@ double EMDecayWidths::ORBITALSPLIT_U2_1r_m1_1r_m1(double k_value, double alpha_l
 double EMDecayWidths::ORBITALSPLIT_U2_1r_m0_1r_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak){
   double value1 = (4 * std::pow(alpha_rho,2) - std::pow(k_value,2) * std::pow(std::cos(thetak),2));
   double value2 = 4. * std::pow(alpha_rho,2);
-  double value2p = std::exp((std::pow(k_value,2) * (std::pow(alpha_rho,-2) + (3 * std::pow(mbottom,2))/(std::pow(alpha_lam,2) * std::pow(mbottom + 2 * mlight,2))))/8.);
+  double value2p = std::exp((std::pow(k_value,2) * (std::pow(alpha_rho,-2) + (3 * std::pow(mbottom,2))/(std::pow(alpha_lam,2) * std::pow(2. * mbottom + mlight,2))))/8.);
   value2 = value2 * value2p;
   double value = value1/value2;
   return value;
@@ -817,7 +817,7 @@ double EMDecayWidths::ORBITALSPLIT_U2_1r_m0_1r_m0(double k_value, double alpha_l
 double EMDecayWidths::ORBITALSPLIT_U2_1r_m1m_1r_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak){
   double value1 = 8 * std::pow(alpha_rho,2) - std::pow(k_value,2) + std::pow(k_value,2) * std::pow(std::cos(thetak),2);
   double value2 = 8 * std::pow(alpha_rho,2);
-  double value2p = std::exp((std::pow(k_value,2) * (std::pow(alpha_rho,-2) + (3 * std::pow(mbottom,2))/(std::pow(alpha_lam,2) * std::pow(mbottom + 2 * mlight,2))))/8.);
+  double value2p = std::exp((std::pow(k_value,2) * (std::pow(alpha_rho,-2) + (3 * std::pow(mbottom,2))/(std::pow(alpha_lam,2) * std::pow(2. * mbottom + mlight,2))))/8.);
   value2 = value2 * value2p;
   double value = value1/value2;
   return value;
@@ -825,17 +825,17 @@ double EMDecayWidths::ORBITALSPLIT_U2_1r_m1m_1r_m1m(double k_value, double alpha
 
 //U3 1rho->1rho
 double EMDecayWidths::ORBITALSPLIT_U3_1r_m1_1r_m1(double k_value, double alpha_lam, double mbottom, double mlight){
-  double value = std::exp((-3 * std::pow(k_value,2) * std::pow(mlight,2))/(2. * std::pow(alpha_lam,2) * std::pow(mbottom + 2 * mlight,2)));
+  double value = std::exp((-3 * std::pow(k_value,2) * std::pow(mlight,2))/(2. * std::pow(alpha_lam,2) * std::pow(2. * mbottom + mlight,2)));
   return value;
 }
 
 double EMDecayWidths::ORBITALSPLIT_U3_1r_m0_1r_m0(double k_value, double alpha_lam, double mbottom, double mlight){
-  double value = std::exp((-3 * std::pow(k_value,2) * std::pow(mlight,2))/(2. * std::pow(alpha_lam,2) * std::pow(mbottom + 2 * mlight,2)));
+  double value = std::exp((-3 * std::pow(k_value,2) * std::pow(mlight,2))/(2. * std::pow(alpha_lam,2) * std::pow(2. * mbottom + mlight,2)));
   return value;
 }
 
 double EMDecayWidths::ORBITALSPLIT_U3_1r_m1m_1r_m1m(double k_value, double alpha_lam, double mbottom, double mlight){
-  double value = std::exp((-3 * std::pow(k_value,2) * std::pow(mlight,2))/(2. * std::pow(alpha_lam,2) * std::pow(mbottom + 2 * mlight,2)));
+  double value = std::exp((-3 * std::pow(k_value,2) * std::pow(mlight,2))/(2. * std::pow(alpha_lam,2) * std::pow(2. * mbottom + mlight,2)));
   return value;
 }
 
@@ -843,7 +843,7 @@ double EMDecayWidths::ORBITALSPLIT_U3_1r_m1m_1r_m1m(double k_value, double alpha
 double EMDecayWidths::ORBITALSPLIT_U1_1r_m0_1l_m0(double k_value, double alpha_lam, double alpha_rho,
 						  double mbottom, double mlight, double thetak, double phik){
   double value1 = std::exp(-std::pow(k_value,2)/(8. * std::pow(alpha_rho,2)) -
-			   (3 * std::pow(k_value,2) * std::pow(mbottom,2))/(8. * std::pow(alpha_lam,2) * std::pow(mbottom + 2 * mlight,2)) + p_imag * phik);
+			   (3 * std::pow(k_value,2) * std::pow(mbottom,2))/(8. * std::pow(alpha_lam,2) * std::pow(2. * mbottom + mlight,2)) + p_imag * phik);
   double value1p = std::pow(k_value,2) * mbottom * std::cos(thetak) * std::sin(thetak);
   value1 = value1 * value1p;
   double value2 = 4 * alpha_lam * alpha_rho * mbottom + 8 * alpha_lam * alpha_rho * mlight;
@@ -855,7 +855,7 @@ double EMDecayWidths::ORBITALSPLIT_U1_1r_m0_1l_m0(double k_value, double alpha_l
 double EMDecayWidths::ORBITALSPLIT_U2_1r_m0_1l_m0(double k_value, double alpha_lam, double alpha_rho,
 						  double mbottom, double mlight, double thetak, double phik){
   double value1 = std::exp(-(std::pow(k_value,2) * (std::pow(alpha_rho,-2) +
-						    (3 * std::pow(mbottom,2))/(std::pow(alpha_lam,2) * std::pow(mbottom + 2 * mlight,2))))/8. + p_imag * phik);
+						    (3 * std::pow(mbottom,2))/(std::pow(alpha_lam,2) * std::pow(2. * mbottom + mlight,2))))/8. + p_imag * phik);
   double value1p = std::pow(k_value,2) * mbottom * std::cos(thetak) * std::sin(thetak);
   value1 = value1 * value1p;
   double value2 = 4 * alpha_lam * alpha_rho * mbottom + 8 * alpha_lam * alpha_rho * mlight;
